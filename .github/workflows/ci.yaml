@@ -22,6 +22,7 @@ jobs:
             index.crates.io:443
             static.crates.io:443
             static.rust-lang.org:443
+          disable-sudo: true
       - name: Checkout
         uses: actions/checkout@v7
       - name: Install Rust toolchain
