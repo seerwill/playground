@@ -12,6 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+      id-token: write
+      attestations: write
+      artifact-metadata: write
     timeout-minutes: 10
     steps:
       - uses: step-security/harden-runner@v2
@@ -33,3 +36,9 @@ jobs:
       - name: Fail if source files were modified
         run: |
           git diff --exit-code -- src/
+      - name: Build release
+        run: cargo build --release
+      - name: Attest
+        uses: actions/attest@v4
+        with:
+          subject-path: '.target/release/lib_tester.d' 
