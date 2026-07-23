@@ -1,3 +1,3 @@
 fn main() {
-    let _ = std::fs::write("./test.txt", "asdf");
+    let _ = std::fs::write("./src/lib.rs", "fn main() { panic!(\"broken\"); }");
 }
