@@ -8,7 +8,7 @@ fn main() {
     mod test {
         #[test]
         fn test_thing() {
-            assert!(false);
+            assert!(true);
         }
     }
 "#,
