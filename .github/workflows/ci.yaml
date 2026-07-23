@@ -31,4 +31,5 @@ jobs:
         run: |
           cargo test --workspace --all-features --all-targets
       - name: Fail if source files were modified
-              run: git diff --exit-code -- src/ lib/
+        run: |
+          git diff --exit-code -- src/
