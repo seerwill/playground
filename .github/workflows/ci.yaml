@@ -16,7 +16,12 @@ jobs:
     steps:
       - uses: step-security/harden-runner@v2
         with:
-          egress-policy: audit
+          egress-policy: block
+          allowed-endpoints: >
+            github.com:443
+            index.crates.io:443
+            static.crates.io:443
+            static.rust-lang.org:443
       - name: Checkout
         uses: actions/checkout@v7
       - name: Install Rust toolchain
