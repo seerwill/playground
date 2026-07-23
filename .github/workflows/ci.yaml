@@ -41,4 +41,4 @@ jobs:
       - name: Attest
         uses: actions/attest@v4
         with:
-          subject-path: '.target/release/libstep_tester.d' 
+          subject-path: './target/release/libstep_tester.d' 
